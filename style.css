@@ -201,8 +201,9 @@ textarea{
         }
     }
     .home-hero__socials{
-        position:absolute;
+        position:fixed;
         top:50%;
+        border-radius: 20px;
         transform:translateY(-50%);background:#fff;box-shadow:rgba(100,100,111,.2) 0 7px 29px 0;padding:.5rem
     }
     @media only screen and (max-width:56.25em){
