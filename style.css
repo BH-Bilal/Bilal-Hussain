@@ -203,8 +203,11 @@ textarea{
     .home-hero__socials{
         position:fixed;
         top:50%;
-        border-radius: 20px;
-        transform:translateY(-50%);background:#fff;box-shadow:rgba(100,100,111,.2) 0 7px 29px 0;padding:.5rem
+        border-radius: 5px;
+        transform:translateY(-50%);background:#3F0071;box-shadow:rgba(100,100,111,.2) 0 7px 29px 0;padding:.5rem;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        
     }
     @media only screen and (max-width:56.25em){
         .home-hero__socials{
@@ -229,11 +232,25 @@ textarea{
         width:100%;
         display:block;
         padding:1rem;
-        transition:background .3s;
-        border-radius:5px
+        transition: background .3s;
+        border-radius:5px;
+    }
+    .home-hero i{
+        color: white;
+        font-size: 30px;
+        margin-left: 3px;
+        
     }
     .home-hero__social-icon-link:hover{
-        background:rgba(250,207,15,.2)
+        /* background:rgb(244, 235, 250); */
+        background: white;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    .home-hero i:hover{
+        color: #3F0071;
+       
+        
     }
     .home-hero__social-icon-link--bd-none{
         border-bottom:0
