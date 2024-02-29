@@ -31,7 +31,7 @@
               class="header__logo-img"
             />
           </div>
-          <span class="header__logo-sub" onclick="startEffect()">⫷ 𝔅𝔦𝔩𝔞𝔩 ℌ𝔲𝔰𝔰𝔞𝔦𝔫 ⫸</span>       
+          <span class="header__logo-sub">⫷ 𝔅𝔦𝔩𝔞𝔩 ℌ𝔲𝔰𝔰𝔞𝔦𝔫 ⫸</span>       
         </div>
         <div class="header__main">
           <ul class="header__links">
@@ -578,25 +578,7 @@
                   width: 150px;
                   color: black;
               }
-        </style> -->
-             <script>
-            function startEffect() {
-            const textElement = document.querySelector('.header__logo-sub');
-            const text = textElement.innerText;
-            function toggleVisibility(index) {
-                if (index < text.length) {
-                    const hiddenText = text.substring(0, index) + ' ' + text.substring(index + 1);
-                    textElement.innerHTML = hiddenText;
-
-                    setTimeout(() => {
-                        textElement.innerHTML = text;
-                        toggleVisibility(index + 1);
-                    }, 3000); // 3 seconds delay
-                }
-            }
-            toggleVisibility(0);
-        }
-    </script>
+        </style> -->             
         </div>
       </div>
     </footer>
