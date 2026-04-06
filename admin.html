@@ -9,7 +9,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
   <body>
-    <section class="contact sec-pad admin-page">
+    <section class="contact sec-pad admin-page admin-login" id="adminLogin">
+      <div class="main-container">
+        <div class="contact__form-container admin-login__card">
+          <h1 class="heading-primary admin-page__title">Admin Access</h1>
+          <p class="text-primary admin-page__intro">
+            Enter the admin password to manage blog posts.
+          </p>
+          <form id="adminAccessForm" class="contact__form">
+            <div class="contact__form-field">
+              <label class="contact__form-label" for="adminPassword">Password</label>
+              <input id="adminPassword" class="contact__form-input" type="password" placeholder="Enter admin password" required />
+            </div>
+            <button class="btn btn--theme contact__btn admin-panel__submit" type="submit">Unlock Admin</button>
+          </form>
+          <p class="admin-status" id="adminAccessStatus"></p>
+          <p style="margin-top:1.8rem;"><a href="index.html#blogs" class="btn btn--med btn--theme-inv">Back To Site</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact sec-pad admin-page" id="adminProtected" hidden>
       <div class="main-container">
         <div class="admin-page__top">
           <div>
@@ -18,7 +38,10 @@
               Write a post here and it will appear automatically in the Blogs section on your homepage.
             </p>
           </div>
-          <a href="index.html#blogs" class="btn btn--med btn--theme-inv">Back To Site</a>
+          <div class="admin-page__actions">
+            <button class="btn btn--med btn--theme-inv" id="adminLogoutBtn" type="button">Lock Admin</button>
+            <a href="index.html#blogs" class="btn btn--med btn--theme-inv">Back To Site</a>
+          </div>
         </div>
 
         <div class="admin-grid">

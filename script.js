@@ -2,6 +2,8 @@ const BLOG_STORAGE_KEY = "bilal_portfolio_blogs";
 const SOCIAL_POSITION_KEY = "bilal_social_position";
 const CONTACT_EMAIL = "bilalhussain1115@gmail.com";
 const CONTACT_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
+const ADMIN_PASSWORD = "BilalAdmin2026!";
+const ADMIN_SESSION_KEY = "bilal_admin_unlocked";
 
 const defaultBlogs = [
   {
@@ -238,6 +240,60 @@ function setupAdminForm() {
   });
 }
 
+function setupAdminGate() {
+  const loginSection = document.getElementById("adminLogin");
+  const protectedSection = document.getElementById("adminProtected");
+  const accessForm = document.getElementById("adminAccessForm");
+  const accessStatus = document.getElementById("adminAccessStatus");
+  const logoutButton = document.getElementById("adminLogoutBtn");
+
+  if (!loginSection || !protectedSection || !accessForm) {
+    return;
+  }
+
+  const setUnlocked = (unlocked) => {
+    if (unlocked) {
+      sessionStorage.setItem(ADMIN_SESSION_KEY, "true");
+      loginSection.hidden = true;
+      protectedSection.hidden = false;
+    } else {
+      sessionStorage.removeItem(ADMIN_SESSION_KEY);
+      loginSection.hidden = false;
+      protectedSection.hidden = true;
+    }
+  };
+
+  setUnlocked(sessionStorage.getItem(ADMIN_SESSION_KEY) === "true");
+
+  accessForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const passwordInput = document.getElementById("adminPassword");
+    const password = passwordInput instanceof HTMLInputElement ? passwordInput.value : "";
+
+    if (password === ADMIN_PASSWORD) {
+      if (accessStatus) {
+        accessStatus.textContent = "Access granted.";
+      }
+      setUnlocked(true);
+      accessForm.reset();
+      return;
+    }
+
+    if (accessStatus) {
+      accessStatus.textContent = "Incorrect password.";
+    }
+  });
+
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      setUnlocked(false);
+      if (accessStatus) {
+        accessStatus.textContent = "Admin locked.";
+      }
+    });
+  }
+}
+
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
@@ -390,6 +446,7 @@ function setupContactForm() {
 
 renderBlogs();
 renderBlogPostPage();
+setupAdminGate();
 setupAdminForm();
 setupFloatingSocial();
 setupContactForm();

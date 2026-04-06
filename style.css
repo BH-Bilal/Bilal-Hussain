@@ -1551,6 +1551,23 @@ textarea {
     margin-bottom: 4rem;
 }
 
+.admin-page__actions {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.admin-login {
+    display: flex;
+    align-items: center;
+}
+
+.admin-login__card {
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: left;
+}
+
 .admin-page__title,
 .admin-page__intro {
     text-align: left;
