@@ -1,103 +1,233 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="images/logo fav.png" type="image/x-icon" />
-    <title>Bilal Hussain  | .Net Developer</title>
-    <link href='style.css' rel='stylesheet'/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <title>Bilal Hussain | .NET Developer</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script> -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Oxanium:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      #home .hero__energy,
+      #home .hero__energy-ring,
+      #home .hero__energy-slash {
+        display: none !important;
+      }
+
+      #home.hero.section--hero {
+        padding-top: 2.6rem !important;
+        padding-bottom: 4.6rem !important;
+      }
+
+      #home .hero__layout {
+        grid-template-columns: minmax(0, 1.18fr) minmax(28rem, 0.82fr) !important;
+        align-items: start !important;
+        gap: 3.2rem !important;
+      }
+
+      #home .hero__copy {
+        align-self: start !important;
+        padding-top: 0.4rem !important;
+        max-width: 72rem !important;
+      }
+
+      #home .hero__aside {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 1.2rem !important;
+        max-width: 38rem !important;
+        margin: 2.2rem 0 2.4rem !important;
+      }
+
+      #home .hero__aside-card {
+        padding: 1.35rem 1.4rem !important;
+        border: 1px solid rgba(255, 240, 221, 0.08) !important;
+        background: rgba(255, 255, 255, 0.02) !important;
+      }
+
+      #home .hero__aside-label {
+        display: block !important;
+        margin-bottom: 0.5rem !important;
+        color: rgba(207, 112, 101, 0.9) !important;
+        font-family: "Space Grotesk", sans-serif !important;
+        font-size: 0.98rem !important;
+        letter-spacing: 0.18em !important;
+        text-transform: uppercase !important;
+      }
+
+      #home .hero__aside-value {
+        display: block !important;
+        color: #f1e5d7 !important;
+        font-family: "Cormorant Garamond", Georgia, serif !important;
+        font-size: 2.1rem !important;
+        line-height: 1 !important;
+      }
+
+      #home .hero__visual {
+        align-self: start !important;
+        margin-top: -1.8rem !important;
+        padding-top: 0 !important;
+      }
+
+      #home .hero-card__photo-wrap,
+      #home .hero-card__photo {
+        min-height: 31rem !important;
+      }
+
+      #home .hero-card__photo {
+        object-position: center 4% !important;
+      }
+
+      #home .hero-card__body {
+        margin-top: -9.6rem !important;
+        margin-left: -3.4rem !important;
+        width: min(31rem, 78%) !important;
+      }
+
+      #home .hero-panel {
+        margin-top: -1rem !important;
+        margin-left: 3.6rem !important;
+        width: calc(100% - 3.6rem) !important;
+      }
+
+      #projects .project-card:not(.project-card--highlight) {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 100% !important;
+        width: 100% !important;
+        max-width: none !important;
+        justify-self: stretch !important;
+      }
+
+      #projects .project-card:not(.project-card--highlight) .project-card__image {
+        width: calc(100% - 2.4rem) !important;
+        margin: 1.2rem 1.2rem 0 !important;
+        aspect-ratio: 16 / 8.6 !important;
+        max-height: 13rem !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+        border: 1px solid rgba(255, 240, 221, 0.08) !important;
+      }
+
+      #projects .project-card:not(.project-card--highlight) .project-card__content {
+        display: flex !important;
+        flex: 1 !important;
+        flex-direction: column !important;
+        padding: 1.8rem 1.8rem 2rem !important;
+      }
+
+      #projects .project-card:not(.project-card--highlight) h3 {
+        font-size: 2.1rem !important;
+        line-height: 1.05 !important;
+      }
+
+      #projects .project-card:not(.project-card--highlight) p {
+        font-size: 1.45rem !important;
+        line-height: 1.58 !important;
+      }
+
+      #projects .project-card:not(.project-card--highlight) .btn {
+        margin-top: auto !important;
+      }
+
+      @media (max-width: 1024px) {
+        #home .hero__layout {
+          grid-template-columns: 1fr !important;
+        }
+
+        #home .hero__visual {
+          margin-top: 1rem !important;
+        }
+
+        #home .hero-card__body,
+        #home .hero-panel {
+          margin-left: 0 !important;
+          width: 100% !important;
+        }
+
+        #home .hero-panel {
+          margin-top: 1.4rem !important;
+        }
+
+        #projects .project-card:not(.project-card--highlight) {
+          max-width: none !important;
+        }
+      }
+
+      @media (max-width: 820px) {
+        #home .hero__aside {
+          grid-template-columns: 1fr 1fr !important;
+          max-width: none !important;
+        }
+
+        #projects .project-card:not(.project-card--highlight) .project-card__image {
+          width: calc(100% - 2.4rem) !important;
+          margin: 1.2rem 1.2rem 0 !important;
+          max-height: 13rem !important;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <img
-              src="images/logo.png"
-              alt="billu Logo Image"
-              class="header__logo-img"
-            />
-          </div>
-          <span class="header__logo-sub">⫷ Biraru Fusein ⫸</span>
-        </div>
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="#home" class="header__link"> Home </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="#about" class="header__link">About </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="#projects" class="header__link"> Projects </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="#blogs" class="header__link">Blogs </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="https://d33wubrfki0l68.cloudfront.net/79e75114856ae61628d2ad26504e3ff4ab2c71b6/f06a4/assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="https://d33wubrfki0l68.cloudfront.net/de2a681c8ca1630b29949b3a34bf158a686a0554/6a0ec/assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
-        </div>
-  
+    <div class="page-background" aria-hidden="true">
+      <div class="page-background__grid"></div>
+      <div class="page-background__orb page-background__orb--cyan"></div>
+      <div class="page-background__orb page-background__orb--violet"></div>
+      <div class="page-background__orb page-background__orb--pink"></div>
+      <div class="page-background__particles">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./"> Home </a>
-            </li>
+      <div class="page-background__ink page-background__ink--top"></div>
+      <div class="page-background__ink page-background__ink--mid"></div>
+      <div class="page-background__ink page-background__ink--bottom"></div>
+    </div>
 
-            <li class="header__sm-menu-link">
-              <a href="#about"> About </a>
-            </li>
+    <header class="header" id="top">
+      <div class="header__content main-container">
+        <a href="#home" class="header__logo-container nav-scroll-link" data-target="home" aria-label="Bilal Hussain home">
+          <div class="header__logo-img-cont">
+            <img src="images/logo.png" alt="Bilal Hussain logo" class="header__logo-img" />
+          </div>
+          <div>
+            <span class="header__logo-sub">Bilal Hussain</span>
+            <span class="header__logo-meta">.NET | WPF | ERP Workflow</span>
+          </div>
+        </a>
 
-            <li class="header__sm-menu-link">
-              <a href="#projects"> Projects </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="#blogs"> Blogs </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="#contact"> Contact </a>
-            </li>
+        <nav class="header__main" aria-label="Primary">
+          <ul class="header__links">
+            <li><a href="#home" class="header__link nav-scroll-link is-active" data-target="home">Home</a></li>
+            <li><a href="#about" class="header__link nav-scroll-link" data-target="about">About</a></li>
+            <li><a href="#skills" class="header__link nav-scroll-link" data-target="skills">Skills</a></li>
+            <li><a href="#projects" class="header__link nav-scroll-link" data-target="projects">Projects</a></li>
+            <li><a href="#blogs" class="header__link nav-scroll-link" data-target="blogs">Blogs</a></li>
+            <li><a href="#contact" class="header__link nav-scroll-link" data-target="contact">Contact</a></li>
           </ul>
-        </div>
+          <button class="header__menu-button" id="mobileMenuButton" type="button" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="header__mobile" id="mobileMenu" hidden>
+        <a href="#home" class="header__mobile-link nav-scroll-link" data-target="home">Home</a>
+        <a href="#about" class="header__mobile-link nav-scroll-link" data-target="about">About</a>
+        <a href="#skills" class="header__mobile-link nav-scroll-link" data-target="skills">Skills</a>
+        <a href="#projects" class="header__mobile-link nav-scroll-link" data-target="projects">Projects</a>
+        <a href="#blogs" class="header__mobile-link nav-scroll-link" data-target="blogs">Blogs</a>
+        <a href="#contact" class="header__mobile-link nav-scroll-link" data-target="contact">Contact</a>
       </div>
     </header>
+
     <div class="floating-social" id="floatingSocial" aria-label="Social links panel">
-      <button class="floating-social__handle" id="floatingHandle" type="button" aria-label="Drag social panel">Drag</button>
+      <button class="floating-social__handle" id="floatingHandle" type="button" aria-label="Drag social panel">Move</button>
       <div class="floating-social__list">
         <a href="https://www.linkedin.com/in/bilal-hussain-066166a6/" class="floating-social__link" rel="noreferrer" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
         <a href="https://github.com/BH-Bilal" class="floating-social__link" rel="noreferrer" target="_blank" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
@@ -106,347 +236,401 @@
         <a href="https://www.facebook.com/profile.php?id=100007429577217" class="floating-social__link" rel="noreferrer" target="_blank" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
       </div>
     </div>
-    <section id="home" class="home-hero">     
-          
-      <div class="home-hero__content">
-        <div class="home-hero__layout">
-          <div class="home-hero__text">
-            <span class="home-hero__eyebrow">Web Developer | WPF Developer | .NET Builder</span>
-            <h1 class="heading-primary">Hey, I'm <span style="color: var(--color-accent);">Bilal Hussain</span></h1>
-            <div class="home-hero__info">
-              <p class="text-primary">
-                I am a .NET-focused web developer with 2+ years of hands-on experience building business applications, modern websites, desktop tools, and workflow-driven systems. I work confidently with HTML, CSS, Bootstrap, Tailwind CSS, ASP.NET MVC, WPF, C#, SQL Server, and DevExpress XAF, and I am currently growing deeper in ASP.NET Core.
-              </p>
+
+    <main>
+      <section id="home" class="hero section section--hero reveal" data-section>
+        <div class="main-container hero__layout">
+          <div class="hero__energy" aria-hidden="true">
+            <span class="hero__energy-slash hero__energy-slash--one"></span>
+            <span class="hero__energy-slash hero__energy-slash--two"></span>
+            <span class="hero__energy-slash hero__energy-slash--three"></span>
+            <span class="hero__energy-ring"></span>
+          </div>
+          <div class="hero__copy">
+            <span class="section-kicker">.NET Developer | WPF | ERP Workflow Systems</span>
+            <h1 class="hero__title">
+              Bilal <span>Hussain</span>
+            </h1>
+            <p class="hero__description">
+              Building practical business software, workflow-driven systems, desktop tools, and modern web interfaces with real experience in ERP flow, inventory movement, WPF development, and .NET-based application logic.
+            </p>
+            <div class="hero__actions">
+              <a href="#projects" class="btn btn--primary nav-scroll-link" data-target="projects">View Portfolio</a>
+              <a href="#contact" class="btn btn--ghost nav-scroll-link" data-target="contact">Contact Me</a>
             </div>
-            <div class="home-hero__quicklist">
-              <span>ERP workflow experience</span>
-              <span>Inventory and production flow</span>
-              <span>Frontend + desktop development</span>
+            <div class="hero__aside">
+              <article class="hero__aside-card">
+                <span class="hero__aside-label">Experience</span>
+                <span class="hero__aside-value">2+ Years</span>
+              </article>
+              <article class="hero__aside-card">
+                <span class="hero__aside-label">Focus</span>
+                <span class="hero__aside-value">ERP Flow</span>
+              </article>
+              <article class="hero__aside-card">
+                <span class="hero__aside-label">Stack</span>
+                <span class="hero__aside-value">C# / WPF</span>
+              </article>
+              <article class="hero__aside-card">
+                <span class="hero__aside-label">Direction</span>
+                <span class="hero__aside-value">ASP.NET Core</span>
+              </article>
             </div>
-            <div class="home-hero__cta">
-              <a href="#projects" class="btn btn--bg">View Projects</a>
+            <div class="hero__highlights">
+              <article class="hero__stat">
+                <strong>2+ Years</strong>
+                <span>practical software experience</span>
+              </article>
+              <article class="hero__stat">
+                <strong>ERP + Workflow</strong>
+                <span>business-process oriented development</span>
+              </article>
+              <article class="hero__stat">
+                <strong>WPF to Web</strong>
+                <span>C#, MVC, SQL, and ASP.NET Core growth</span>
+              </article>
             </div>
           </div>
-          <div class="home-hero__visual">
-            <div class="hero-portrait">
-              <div class="hero-portrait__halo"></div>
-              <div class="hero-portrait__frame">
-                <img src="images/hero-photo.jpg" alt="Bilal Hussain portrait" class="hero-portrait__img" />
-                <div class="hero-portrait__content">
-                  <h3 class="hero-portrait__title">Bilal Hussain</h3>
-                  <p class="hero-portrait__text">Building practical web and business software with clean structure, strong C# skills, and a real workflow mindset.</p>
-                  <div class="hero-portrait__chips">
-                    <span>C#</span>
-                    <span>WPF</span>
-                    <span>MVC</span>
-                    <span>XAF</span>
-                  </div>
+
+          <div class="hero__visual">
+            <div class="hero-card hero-card--profile reveal">
+              <div class="hero-card__photo-wrap">
+                <img src="images/hero-photo-editorial.jpeg" alt="Bilal Hussain portrait" class="hero-card__photo" />
+                <div class="hero-card__scan"></div>
+              </div>
+              <div class="hero-card__body">
+                <p class="hero-card__eyebrow">Professional Developer</p>
+                <h2 class="hero-card__title">Workflow-first .NET development with a practical business mindset</h2>
+                <p class="hero-card__text">
+                  Focused on ERP flow, WPF desktop applications, structured interfaces, and reliable systems that reflect how real operations actually work.
+                </p>
+                <div class="hero-card__tags">
+                  <span>C#</span>
+                  <span>WPF</span>
+                  <span>ASP.NET MVC</span>
+                  <span>DevExpress XAF</span>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="about" class="about sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main">About Me</span>
-          <span class="heading-sec__sub">
-            Here is a better look at my background, the technologies I work with, and the kind of business-focused software I enjoy building.
-          </span>
-        </h2>
-        <div class="about__content">
-          <div class="about__content-main">
-            <h3 class="about__content-title">Get to know me</h3>
-            <div class="about__content-details">
-              <p class="about__content-details-para">
-                I'm a <strong>.NET Developer</strong> and <strong>Web Developer</strong> who enjoys building practical software that solves real workflow problems. My work includes websites, internal business tools, desktop applications, and ERP-related modules that support daily operations.
-              </p>
-              <p class="about__content-details-para">
-                Over the last <strong>2+ years</strong>, I have worked with <strong>HTML, CSS, Bootstrap, Tailwind CSS, C#, ASP.NET MVC, WPF, SQL Server, Entity Framework, LINQ, JavaScript, jQuery</strong>, and <strong>DevExpress XAF</strong>. I am also currently learning <strong>ASP.NET Core</strong> to expand my backend and modern web development skills.
-              </p>
-              <p class="about__content-details-para">
-                I have hands-on experience in <strong>ERP workflows for the shoe industry</strong>, including <strong>inventory workflow</strong>, <strong>GRN to production issue flow</strong>, returns, and related process handling. That experience helped me understand not just coding, but also how software needs to support real business movement from one stage to the next.
-              </p>
-              <p class="about__content-details-para">
-                Feel free to connect with me on
-                <a
-                  rel="noreferrer"
-                  href="https://www.linkedin.com/in/bilal-hussain-066166a6/"
-                  target="_blank"
-                  >LinkedIn</a
-                >
-                if you'd like to collaborate, discuss development work, or talk about opportunities where I can contribute with both technical skills and business workflow understanding.
-              </p>
-            </div>
-            <a href="/images/Bilal's Resume.pdf" class="btn btn--med btn--theme dynamicBgClr"
-              >Download CV</a
-            >
-          </div>
-          <div class="about__content-skills">
-            <h3 class="about__content-title">Core Skills</h3>
-            <div class="skills">
-              <div class="skills__skill">C#</div>
-              <div class="skills__skill">ASP.NET MVC</div>
-              <div class="skills__skill">ASP.NET Core</div>
-              <div class="skills__skill">WPF</div>
-              <div class="skills__skill">Windows Applications</div>
-              <div class="skills__skill">DevExpress XAF</div>
-              <div class="skills__skill">SQL Server</div>
-              <div class="skills__skill">Entity Framework</div>
-              <div class="skills__skill">LINQ</div>
-              <div class="skills__skill">HTML</div>
-              <div class="skills__skill">CSS</div>
-              <div class="skills__skill">Bootstrap</div>
-              <div class="skills__skill">Tailwind CSS</div>
-              <div class="skills__skill">Ajax</div>
-              <div class="skills__skill">JavaScript</div>
-              <div class="skills__skill">jQuery</div>
-              <div class="skills__skill">ERP Workflow</div>
-              <div class="skills__skill">Inventory Workflow</div>
-              <div class="skills__skill">GRN to Production Issue</div>
-              <div class="skills__skill">Returns Handling</div>
-            </div>
-            <div class="about__highlight-box">
-              <h4 class="about__highlight-title">What I bring</h4>
-              <p class="about__highlight-text">
-                I combine frontend design, .NET development, desktop application knowledge, and workflow understanding to build software that looks clean and works well in real business environments.
-              </p>
-            </div>
-        </div>
-        </div>
-      </div>
-    </section>
-    <section id="projects" class="projects sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
-          <span class="heading-sec__main">Projects</span>
-          <span class="heading-sec__sub">
-            Here are a few projects and practice builds that reflect my frontend work, .NET development journey, and the kind of interfaces I enjoy creating.
-          </span>
-        </h2>
 
-        <div class="projects__content">
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/MVC.png"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">MVC Demo</h3>
-              <p class="projects__row-content-desc">
-                A practice project built with ASP.NET MVC to strengthen my understanding of structured web application development, routing, views, and clean user flow. It reflects the kind of backend-connected web work I enjoy building with C#.
-              </p>
-              <a class='btn btn--med btn--theme dynamicBgClr' href='https://github.com/BH-Bilal/Mobile-Shop' target='_blank'>Source Code</a
-              >
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/shine (1).png"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Shine Agency</h3>
-              <p class="projects__row-content-desc">
-                A visually focused website project created to showcase clean layout work, section hierarchy, and responsive frontend design using the HTML, CSS, and styling fundamentals I use in day-to-day web development.
-              </p>
-              <a class='btn btn--med btn--theme dynamicBgClr' href='https://agency-xyz.netlify.app/' target='_blank'>View Site</a
-              >
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/validation.jpg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Form validation</h3>
-              <p class="projects__row-content-desc">
-                A frontend validation project built to practice better form behavior, cleaner input handling, and user-friendly interactions. It highlights my focus on practical UI details that improve the experience for real users.
-              </p>
-              <a class='btn btn--med btn--theme dynamicBgClr' href='https://form-page-validation.netlify.app/' target='_blank'>View Page</a
-              >
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/stop.jpg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Stop watch</h3>
-              <p class="projects__row-content-desc">
-                A JavaScript-based mini project created to practice logic, timing functions, and interface control. Small projects like this help sharpen the fundamentals that support larger web applications.
-              </p>
-              <a class='btn btn--med btn--theme dynamicBgClr' href='https://stowpwatch.netlify.app/' target='_blank'>View page</a
-              >
+            <div class="hero-panel hero-panel--experience reveal">
+              <span class="hero-panel__label">Experience Focus</span>
+              <ul>
+                <li>ERP workflow understanding</li>
+                <li>Inventory and stock movement flow</li>
+                <li>GRN to production issue handling</li>
+                <li>Returns and process-oriented systems</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="blogs" class="projects sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
-          <span class="heading-sec__main">Blogs</span>
-          <span class="heading-sec__sub">
-            I also enjoy sharing what I learn while working with .NET, frontend design, business workflows, and practical development challenges.
-          </span>
-        </h2>
-        <div class="blog-grid" id="blogGrid"></div>
-      </div>
-        </section>
-
-    <section id="contact" class="contact sec-pad dynamicBg">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main heading-sec__main--lt">Contact</span>
-          <span class="heading-sec__sub heading-sec__sub--lt">
-            If you have a project, job opportunity, or business workflow idea to discuss, send me a message and I will get back to you as soon as possible.
-          </span>
-        </h2>
-        <div class="contact__form-container">
-          <form action="https://formsubmit.co/ajax/bilalhussain1115@gmail.com" class="contact__form" id="contactForm" method="post">
-            <input type="hidden" name="_subject" value="New portfolio contact message" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="true" />
-            <input type="text" name="_honey" class="contact__honeypot" tabindex="-1" autocomplete="off" />
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="name">Name</label>
-              <input
-                required
-                placeholder="Enter Your Name"
-                type="text"
-                class="contact__form-input"
-                name="name"
-                id="name"
-              >
-            </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="email">Email</label>
-              <input
-                placeholder="Enter Your Email"
-                type="email"
-                class="contact__form-input"
-                name="email"
-                id="email"
-                required 
-              >
-            </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="message">Message</label>
-              <textarea
-                required
-                cols="30"
-                rows="10"
-                class="contact__form-input"
-                placeholder="Enter Your Message"
-                name="message"
-                id="message"
-              ></textarea>
-            </div>
-            <button class="btn btn--theme contact__btn" type="submit">
-              Submit
-            </button>
-            <p class="contact-note" id="contactStatus">Messages can be prepared for email delivery from this form.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-    <footer class="main-footer">
-      <div class="main-container">
-        <div class="main-footer__upper">
-          <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              
-              <a
-              
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.linkedin.com/in/bilal-hussain-066166a6/" 
-              >
-                
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://github.com/"
-              >
-                
-                <i class="fa fa-github" aria-hidden="true"></i>
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://wa.me/917200157338?text=hi"
-              >
-                
-                <i class="fa fa-whatsapp" aria-hidden="true"></i>
-              </a>
-
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href=""
-              >
-                
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.instagram.com/sidu_munjiiiii/"
-              >
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h2 class="heading heading-sm text-lt">Bilal Hussain</h2>
-            <p class="main-footer__short-desc">
-              A .NET-focused developer building websites, desktop applications, and workflow-driven business software with strong interest in ERP systems, frontend design, and practical C# solutions.
+      <section id="about" class="section reveal" data-section>
+        <div class="main-container">
+          <div class="section-heading">
+            <span class="section-kicker">.NET Background</span>
+            <h2 class="section-title">About Me</h2>
+            <p class="section-text">
+              My portfolio is not built around tutorial-only projects. It reflects real exposure to workflow-driven systems, operational software needs, and the transition from desktop business tooling into modern .NET web development.
             </p>
           </div>
-        </div>
 
-        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
-        <div class="main-footer__lower">
-          &copy; Copyright <script>document.write(new Date().getFullYear())</script>. Made by
-          <a rel="noreferrer" target="_blank" href="#"
-            >Biraru Dev</a>
+          <div class="about-grid">
+            <article class="panel panel--glass reveal">
+              <h3 class="panel__title">What I work on</h3>
+              <p>
+                I am a .NET-focused developer with around 2+ years of practical experience working across desktop applications, web interfaces, and process-oriented business systems. My background combines C#, WPF, ASP.NET MVC, SQL Server, Entity Framework, and frontend technologies like HTML, CSS, Bootstrap, Tailwind CSS, JavaScript, jQuery, and Ajax.
+              </p>
+              <p>
+                I have also worked with DevExpress XAF and Windows-based application flows, which gave me a strong understanding of structured business software and productivity-focused UI.
+              </p>
+            </article>
+
+            <article class="panel panel--accent reveal">
+              <h3 class="panel__title">Why my experience is different</h3>
+              <p>
+                I have hands-on experience with ERP workflow, inventory handling, stock movement, GRN to production issue flow, returns, and shoe-industry process logic. That means I do not just think in screens and pages. I think in terms of how software supports real operations, users, and decision flow.
+              </p>
+              <p>
+                Right now I am also growing deeper into ASP.NET Core to strengthen my modern web stack while keeping that same practical, business-oriented mindset.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section section--alt reveal" data-section>
+        <div class="main-container">
+          <div class="section-heading">
+            <span class="section-kicker">Core Capabilities</span>
+            <h2 class="section-title">Skills</h2>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card reveal">
+              <h3>Backend / .NET</h3>
+              <div class="skill-list">
+                <span>C#</span>
+                <span>.NET</span>
+                <span>ASP.NET MVC</span>
+                <span>ASP.NET Core</span>
+                <span>Entity Framework</span>
+                <span>LINQ</span>
+              </div>
+            </article>
+            <article class="skill-card reveal">
+              <h3>Desktop Development</h3>
+              <div class="skill-list">
+                <span>WPF</span>
+                <span>XAML</span>
+                <span>Windows Applications</span>
+                <span>DevExpress XAF</span>
+              </div>
+            </article>
+            <article class="skill-card reveal">
+              <h3>Frontend</h3>
+              <div class="skill-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Bootstrap</span>
+                <span>Tailwind CSS</span>
+                <span>JavaScript</span>
+                <span>jQuery</span>
+                <span>Ajax</span>
+              </div>
+            </article>
+            <article class="skill-card reveal">
+              <h3>Database / Data</h3>
+              <div class="skill-list">
+                <span>SQL Server</span>
+                <span>Entity Framework</span>
+                <span>LINQ</span>
+                <span>Data-driven UI flow</span>
+              </div>
+            </article>
+            <article class="skill-card reveal">
+              <h3>Workflow / Business Knowledge</h3>
+              <div class="skill-list">
+                <span>ERP workflow</span>
+                <span>Inventory workflow</span>
+                <span>GRN to production issue</span>
+                <span>Returns handling</span>
+                <span>Stock movement</span>
+                <span>Shoe-industry systems</span>
+              </div>
+            </article>
+            <article class="skill-card reveal">
+              <h3>Developer Direction</h3>
+              <div class="skill-list">
+                <span>Business software mindset</span>
+                <span>Clean logic</span>
+                <span>Modern interface polish</span>
+                <span>ASP.NET Core growth</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section reveal" data-section>
+        <div class="main-container">
+          <div class="section-heading">
+            <span class="section-kicker">Projects & Work Highlights</span>
+            <h2 class="section-title">Projects</h2>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card project-card--highlight reveal">
+              <span class="project-card__type">Professional Experience Highlight</span>
+              <h3>ERP Inventory Workflow System</h3>
+              <p>
+                Experience working around inventory movement, GRN flow, production issue handling, stock visibility, and returns-oriented business operations in a workflow-driven software context.
+              </p>
+              <div class="project-card__meta">
+                <span>Workflow logic</span>
+                <span>Inventory flow</span>
+                <span>Business process understanding</span>
+              </div>
+              <p class="project-card__note">Demonstrates: real operational software awareness, process mapping, and workflow-sensitive development thinking.</p>
+            </article>
+
+            <article class="project-card project-card--highlight reveal">
+              <span class="project-card__type">Professional Experience Highlight</span>
+              <h3>WPF Desktop Business Application</h3>
+              <p>
+                Built and worked with desktop-oriented application patterns using WPF, XAML, and DevExpress-related tooling for structured business workflows and productivity-focused interfaces.
+              </p>
+              <div class="project-card__meta">
+                <span>WPF</span>
+                <span>XAML</span>
+                <span>DevExpress XAF</span>
+              </div>
+              <p class="project-card__note">Demonstrates: desktop application understanding, form-heavy UI flow, and real-world business interface work.</p>
+            </article>
+
+            <article class="project-card reveal">
+              <img src="images/MVC.png" alt="MVC demo screenshot" class="project-card__image" />
+              <div class="project-card__content">
+                <span class="project-card__type">Practice Build</span>
+                <h3>MVC Demo</h3>
+                <p>
+                  A structured ASP.NET MVC project built to strengthen routing, view organization, backend-connected page flow, and a cleaner understanding of how .NET web applications are composed.
+                </p>
+                <div class="project-card__meta">
+                  <span>ASP.NET MVC</span>
+                  <span>C#</span>
+                  <span>Razor Views</span>
+                </div>
+                <a href="https://github.com/BH-Bilal/Mobile-Shop" target="_blank" rel="noreferrer" class="btn btn--ghost">Source Code</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <img src="images/shine (1).png" alt="Shine Agency screenshot" class="project-card__image" />
+              <div class="project-card__content">
+                <span class="project-card__type">Frontend Showcase</span>
+                <h3>Shine Agency</h3>
+                <p>
+                  A responsive site focused on presentation quality, section rhythm, and polished frontend execution. It demonstrates how I approach layout, visual structure, and user-facing clarity.
+                </p>
+                <div class="project-card__meta">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>Responsive UI</span>
+                </div>
+                <a href="https://agency-xyz.netlify.app/" target="_blank" rel="noreferrer" class="btn btn--ghost">View Site</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <img src="images/validation.jpg" alt="Form validation screenshot" class="project-card__image" />
+              <div class="project-card__content">
+                <span class="project-card__type">UI Interaction Study</span>
+                <h3>Form Validation</h3>
+                <p>
+                  A focused interface build exploring validation states, user feedback, and better input flow. It reflects attention to frontend usability instead of only static visuals.
+                </p>
+                <div class="project-card__meta">
+                  <span>JavaScript</span>
+                  <span>UI Validation</span>
+                  <span>Form UX</span>
+                </div>
+                <a href="https://form-page-validation.netlify.app/" target="_blank" rel="noreferrer" class="btn btn--ghost">View Project</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <img src="images/stop.jpg" alt="Stopwatch screenshot" class="project-card__image" />
+              <div class="project-card__content">
+                <span class="project-card__type">Logic Practice</span>
+                <h3>Stopwatch</h3>
+                <p>
+                  A smaller JavaScript project that sharpens state handling, timing logic, and lightweight interface control. Simple in scope, but useful for reinforcing frontend fundamentals.
+                </p>
+                <div class="project-card__meta">
+                  <span>JavaScript</span>
+                  <span>State Logic</span>
+                  <span>Interactive UI</span>
+                </div>
+                <a href="https://stowpwatch.netlify.app/" target="_blank" rel="noreferrer" class="btn btn--ghost">View Project</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="blogs" class="section section--alt reveal" data-section>
+        <div class="main-container">
+          <div class="section-heading section-heading--split">
+            <div>
+              <span class="section-kicker">Writing & Notes</span>
+              <h2 class="section-title">Blog</h2>
+            </div>
+            <p class="section-text section-text--compact">
+              This section is designed for longer-form writing about .NET, frontend work, business workflow thinking, and the practical lessons that come from building useful software.
+            </p>
+          </div>
+          <div class="blog-grid" id="blogGrid"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section--contact reveal" data-section>
+        <div class="main-container contact-layout">
+          <div class="contact-copy panel panel--glass reveal">
+            <span class="section-kicker">Let's Connect</span>
+            <h2 class="section-title">Contact</h2>
+            <p class="section-text">
+              I'm open to practical web projects, business software opportunities, workflow-driven systems, and developer roles where clean logic, reliability, and product thinking matter.
+            </p>
+            <div class="contact-points">
+              <div>
+                <strong>Open to</strong>
+                <span>Projects, freelance work, and developer opportunities</span>
+              </div>
+              <div>
+                <strong>Interested in</strong>
+                <span>.NET web work, WPF tooling, ERP workflows, inventory systems</span>
+              </div>
+              <div>
+                <strong>Reach me</strong>
+                <span>bilalhussain1115@gmail.com</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap panel panel--solid reveal">
+            <form action="https://formsubmit.co/bilalhussain1115@gmail.com" class="contact__form" id="contactForm" method="post">
+              <input type="hidden" name="_subject" value="New portfolio contact message" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="true" />
+              <input type="hidden" name="_next" value="https://bilal-bh.netlify.app/#contact" />
+              <input type="text" name="_honey" class="contact__honeypot" tabindex="-1" autocomplete="off" />
+
+              <div class="contact__form-field">
+                <label class="contact__form-label" for="name">Name</label>
+                <input required placeholder="Enter your name" type="text" class="contact__form-input" name="name" id="name" />
+              </div>
+              <div class="contact__form-field">
+                <label class="contact__form-label" for="email">Email</label>
+                <input required placeholder="Enter your email" type="email" class="contact__form-input" name="email" id="email" />
+              </div>
+              <div class="contact__form-field">
+                <label class="contact__form-label" for="message">Message</label>
+                <textarea required rows="8" class="contact__form-input" placeholder="Tell me about your project, role, or idea" name="message" id="message"></textarea>
+              </div>
+              <button class="btn btn--primary contact__btn" type="submit">Send Message</button>
+              <p class="contact-note" id="contactStatus">Messages submit directly to bilalhussain1115@gmail.com after FormSubmit activation.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="main-container main-footer__inner">
+        <div>
+          <span class="section-kicker">Bilal Hussain</span>
+          <h2 class="main-footer__title">.NET developer building modern interfaces around real business workflow needs.</h2>
+        </div>
+        <div class="main-footer__links">
+          <a href="https://www.linkedin.com/in/bilal-hussain-066166a6/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/BH-Bilal" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="blog.html?id=default-core">Latest Blog</a>
         </div>
       </div>
+      <div class="main-container main-footer__lower">
+        <span>&copy; <script>document.write(new Date().getFullYear())</script> Bilal Hussain</span>
+        <span>Designed for a dark anime-tech developer presence with business-software credibility.</span>
+      </div>
     </footer>
-<script>
-  history.scrollRestoration = "manual";
 
-  window.onload = function () {
-    window.scrollTo(0, 0);
-  };
-</script>
+    <script>
+      history.scrollRestoration = "manual";
+      window.onload = function () {
+        window.scrollTo(0, 0);
+      };
+    </script>
     <script src="script.js"></script>
   </body>
-</html> 
+</html>
