@@ -641,7 +641,7 @@ function setupContactForm() {
   }
 
   status.textContent =
-    "Messages are configured to send to bilalhussain1115@gmail.com through FormSubmit. If delivery is not active yet, confirm the activation link once and test again.";
+    // "Messages are configured to send to bilalhussain1115@gmail.com through FormSubmit. If delivery is not active yet, confirm the activation link once and test again.";
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
