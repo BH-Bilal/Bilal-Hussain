@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bilal Hussain | Blog Admin</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body>
+    <section class="contact sec-pad admin-page">
+      <div class="main-container">
+        <div class="admin-page__top">
+          <div>
+            <h1 class="heading-primary admin-page__title">Blog Admin</h1>
+            <p class="text-primary admin-page__intro">
+              Write a post here and it will appear automatically in the Blogs section on your homepage.
+            </p>
+          </div>
+          <a href="index.html#blogs" class="btn btn--med btn--theme-inv">Back To Site</a>
+        </div>
+
+        <div class="admin-grid">
+          <div class="contact__form-container admin-panel">
+            <form id="blogAdminForm" class="contact__form">
+              <div class="contact__form-field">
+                <label class="contact__form-label" for="blogTitle">Blog Title</label>
+                <input id="blogTitle" class="contact__form-input" type="text" placeholder="Enter blog title" required />
+              </div>
+
+              <div class="contact__form-field">
+                <label class="contact__form-label" for="blogTag">Category</label>
+                <input id="blogTag" class="contact__form-input" type="text" placeholder="Example: ASP.NET Core" required />
+              </div>
+
+              <div class="contact__form-field">
+                <label class="contact__form-label" for="blogImage">Blog Image URL</label>
+                <input id="blogImage" class="contact__form-input" type="url" placeholder="Paste an image URL (optional)" />
+              </div>
+
+              <div class="contact__form-field">
+                <label class="contact__form-label" for="blogContent">Content</label>
+                <textarea id="blogContent" class="contact__form-input" rows="10" placeholder="Write your blog content here" required></textarea>
+              </div>
+
+              <button class="btn btn--theme contact__btn admin-panel__submit" type="submit">Publish Post</button>
+            </form>
+            <p class="admin-status" id="adminStatus"></p>
+          </div>
+
+          <div class="admin-list-wrap">
+            <h2 class="heading-sm admin-list-wrap__title">Published From Admin</h2>
+            <div id="adminBlogList" class="admin-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
