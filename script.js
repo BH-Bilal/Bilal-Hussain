@@ -27,7 +27,7 @@ const defaultBlogs = [
       "Workflow-based systems taught me that software has to respect how operations move in the real world, not just how screens look on paper.",
     content:
       "One of the most valuable things I learned from workflow-oriented software work is that business systems are not just a collection of forms. They represent movement, responsibility, timing, and process accuracy.\n\nIn inventory and ERP-related flow, a small mistake in stock movement, GRN handling, production issue logic, or returns can create confusion far beyond the screen where the action started. That is why I think carefully about data flow, state, and process order when I build software.",
-    createdAt: "2026-04-06T09:15:00.000Z",
+    createdAt: "2026-04-05T09:15:00.000Z",
   },
   {
     id: "default-core",
@@ -38,7 +38,7 @@ const defaultBlogs = [
       "ASP.NET Core is the next step in my growth because I want to combine my .NET background with more modern web architecture and deployment-ready development.",
     content:
       "I am currently spending more time with ASP.NET Core because I want to deepen my ability to build modern web applications in a stronger, more scalable way.\n\nMy background already gave me good experience in C#, MVC thinking, WPF, workflow-based systems, and practical development. ASP.NET Core feels like the right direction to extend that foundation into modern backend work, cleaner APIs, and stronger full-stack capability.",
-    createdAt: "2026-04-06T09:30:00.000Z",
+    createdAt: "2026-04-04T09:30:00.000Z",
   },
 ];
 
